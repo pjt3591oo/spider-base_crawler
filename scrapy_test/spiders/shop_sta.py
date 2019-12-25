@@ -12,7 +12,7 @@ class ShopStaSpider(scrapy.Spider):
         'Accept': 'application/json,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, sdch',
         'Accept-Language': 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
-        'In-Sess': 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlNzg1NWE1N2JmNTg0ZmVhYWFkYjM0Yzc1NWJkZmFhNSIsImlhdCI6MTU3NzI0NDIwMSwiZXhwIjoxNTc3MjUwODExLCJob3N0IjoiVyIsImRldmMiOiJQIiwiaXR5cCI6IlIiLCJwc2VxIjoxLCJwY25vIjowLCJvc2VxIjowLCJva3NxIjowLCJpcCI6IjEyMS4xNjEuMTYuMTYxIiwiYXBwaWQiOiIiLCJvc3RwIjoiIiwiYXBwdiI6IiIsInBzaWQiOiIifQ.3WMnVEmcCrJk5PxTAC3yonRd16Uo28jz3nuxo3h_ud4'
+        'In-Sess': 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI5YTRmMmQ4Yjc2MDM0OWY2YTRlYjg0NjMwNjJmMzFjNiIsImlhdCI6MTU3NzI3MjQ2MywiZXhwIjoxNTc3Mjc2MDYzLCJob3N0IjoiVyIsImRldmMiOiJQIiwiaXR5cCI6IlIiLCJwc2VxIjoxLCJwY25vIjowLCJvc2VxIjowLCJva3NxIjowLCJpcCI6IjEyMS4xNjEuMTYuMTYxIiwiYXBwaWQiOiIiLCJvc3RwIjoiIiwiYXBwdiI6IiIsInBzaWQiOiIifQ.9dtlvJZpF5n4sblMaaU4cVCK7fSEBSqgzf7dk018I1I'
     }
     current_page = 1
 
@@ -22,6 +22,7 @@ class ShopStaSpider(scrapy.Spider):
     def parse(self, response):
         body = json.loads(response.body)
         data_set = body['data']
+
         for data in data_set:
             shop_item = ShopItem(
                 storeSeq=data.get("storeSeq", 0),

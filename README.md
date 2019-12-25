@@ -8,6 +8,8 @@ $ scrapy crawl [크롤러 이름]
 
 크롤러 이름은 **`spiders`**에 있는 파일명을 적는다. 전달 옵션에 따라 다양한 형태로 저장가능하며 pipelines를 통해서도 저장할 수 있다.
 
+## 스타일닷컴
+
 * json 저장
 
 ```bash
@@ -22,6 +24,7 @@ $ scrapy crawl shop_sta -o result.csv -t csv
 
 스타일 닷컴에서 쇼핑몰 리스트 수집
 
+
 ```json
 {
   "storeSeq": "24", 
@@ -35,6 +38,21 @@ $ scrapy crawl shop_sta -o result.csv -t csv
   "webProdUrl": "/shop/shopdetail.html"
 }
 ```
+
+## 업비트
+
+* json 저장
+
+```bash
+$ scrapy crawl exchange_upbit -o result.json
+```
+
+* csv 저장
+
+```bash
+$ scrapy crawl exchange_upbit -o result.csv -t csv
+```
+
 
 # crawler generator
 

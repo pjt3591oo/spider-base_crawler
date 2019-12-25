@@ -16,6 +16,8 @@ NEWSPIDER_MODULE = 'scrapy_test.spiders'
 
 FEED_EXPORT_ENCODING = 'utf-8'
 
+LOG_LEVEL = 'INFO'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapy_test (+http://www.yourdomain.com)'
 

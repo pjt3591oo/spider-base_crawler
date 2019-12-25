@@ -8,7 +8,6 @@
 
 class ScrapyTestPipeline(object):
     def process_item(self, item, spider):
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         return item
 
     def open_spider(self, spider):

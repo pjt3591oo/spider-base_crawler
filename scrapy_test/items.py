@@ -23,3 +23,16 @@ class ShopItem(scrapy.Item):
     storeName = scrapy.Field()
     storeGender = scrapy.Field()
     webProdUrl = scrapy.Field()
+
+class UpbitItem(scrapy.Item):
+    code = scrapy.Field()
+    openingPrice = scrapy.Field()
+    highPrice = scrapy.Field() 
+    lowPrice = scrapy.Field() 
+    tradePrice = scrapy.Field() 
+    candleAccTradeVolume = scrapy.Field() 
+    candleAccTradePrice = scrapy.Field() 
+    unit = scrapy.Field() 
+    timestamp = scrapy.Field() 
+    candleDateTime = scrapy.Field() 
+    candleDateTimeKst = scrapy.Field()
