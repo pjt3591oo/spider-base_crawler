@@ -44,13 +44,13 @@ $ scrapy crawl shop_sta -o result.csv -t csv
 * json 저장
 
 ```bash
-$ scrapy crawl exchange_upbit -o result.json
+$ scrapy crawl exchange_upbit_by_chart -o result.json
 ```
 
 * csv 저장
 
 ```bash
-$ scrapy crawl exchange_upbit -o result.csv -t csv
+$ scrapy crawl exchange_upbit_by_chart -o result.csv -t csv
 ```
 
 

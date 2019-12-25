@@ -5,8 +5,8 @@ from urllib import parse
 from ..items import UpbitItem
 
 
-class ExchangeUpbitSpider(scrapy.Spider):
-    name = 'exchange_upbit'
+class ExchangeUpbitByChartSpider(scrapy.Spider):
+    name = 'exchange_upbit_by_chart'
     allowed_domains = ['crix-api-cdn.upbit.com']
     start_urls = ['https://crix-api-cdn.upbit.com/v1/crix/candles/minutes/3?code=CRIX.UPBIT.KRW-BTC&count=200&']
     headers = {
@@ -23,7 +23,7 @@ class ExchangeUpbitSpider(scrapy.Spider):
 
     def start_requests(self):
         print()
-        yield scrapy.http.Request(ExchangeUpbitSpider.start_urls[0] + ExchangeUpbitSpider.to, headers=ExchangeUpbitSpider.headers)
+        yield scrapy.http.Request(ExchangeUpbitByChartSpider.start_urls[0] + ExchangeUpbitByChartSpider.to, headers=ExchangeUpbitByChartSpider.headers)
 
     def parse(self, response):
         data_set = json.loads(response.body)
@@ -49,12 +49,12 @@ class ExchangeUpbitSpider(scrapy.Spider):
 
         # to=2019-12-25T00%3A30%3A00Z
         qs = parse.urlencode([("to", ts.replace('+00:00','Z'))], encoding="UTF-8", doseq=True)
-        ExchangeUpbitSpider.to = qs
-        url = ExchangeUpbitSpider.start_urls[0] + ExchangeUpbitSpider.to
+        ExchangeUpbitByChartSpider.to = qs
+        url = ExchangeUpbitByChartSpider.start_urls[0] + ExchangeUpbitByChartSpider.to
         
         print(url)
         
-        yield scrapy.Request(url, headers=ExchangeUpbitSpider.headers)
+        yield scrapy.Request(url, headers=ExchangeUpbitByChartSpider.headers)
 
 
 # 2019-12-25T00:15:00+00:00
