@@ -36,3 +36,12 @@ class UpbitItem(scrapy.Item):
     timestamp = scrapy.Field() 
     candleDateTime = scrapy.Field() 
     candleDateTimeKst = scrapy.Field()
+
+class CoinoneItem(scrapy.Item):
+    dt = scrapy.Field()
+    open = scrapy.Field()
+    low = scrapy.Field()
+    high = scrapy.Field()
+    close = scrapy.Field()
+    volume = scrapy.Field()
+    adj_Close = scrapy.Field()

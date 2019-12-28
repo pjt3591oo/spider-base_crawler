@@ -10,6 +10,12 @@ $ scrapy crawl [크롤러 이름]
 
 ## 스타일닷컴
 
+* 구동
+
+```bash
+$ scrapy crawl shop_sta
+```
+
 * json 저장
 
 ```bash
@@ -41,6 +47,12 @@ $ scrapy crawl shop_sta -o result.csv -t csv
 
 ## 업비트
 
+* 구동
+
+```bash
+$ scrapy crawl exchange_upbit_by_chart
+```
+
 * json 저장
 
 ```bash
@@ -51,6 +63,26 @@ $ scrapy crawl exchange_upbit_by_chart -o result.json
 
 ```bash
 $ scrapy crawl exchange_upbit_by_chart -o result.csv -t csv
+```
+
+## 코인원
+
+* 구동
+
+```bash
+$ scrapy crawl exchange_coinone
+```
+
+* json 저장
+
+```bash
+$ scrapy crawl exchange_coinone -o result.json
+```
+
+* csv 저장
+
+```bash
+$ scrapy crawl exchange_coinone -o result.csv -t csv
 ```
 
 
