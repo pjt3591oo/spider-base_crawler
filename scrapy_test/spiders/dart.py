@@ -6,7 +6,7 @@ class DartSpider(scrapy.Spider):
     name = 'dart'
     start_urls = ['http://dart.fss.or.kr/corp/searchCorpL.ax']
 
-    searchIndex = 0  # ㄱ~ㅎ, A~Z 검색, 0: ㄱ, 1: ㄴ, ...
+    searchIndex = 0 # [0,1,2,3,4,5,6,7,8,9,10,11,12,13,15,16]  # ㄱ~ㅎ, A~Z 검색, 0: ㄱ, 1: ㄴ, ...
     currentPage = 1 # pagination
     last_searchIndex = 16
  
@@ -46,12 +46,13 @@ class DartSpider(scrapy.Spider):
         
         print('%s %s %s %s %s'%('>'*20,DartSpider.searchIndex, DartSpider.currentPage, len(table_rows), '<'*20,))
 
-        DartSpider.currentPage += 1
+        self.next_page()
 
-        if len(table_rows) < 300:
-            DartSpider.currentPage = 1
-            DartSpider.searchIndex += 1
+        if self.is_last_page(table_rows):
+            self.reset_page()
+            self.next_keyword()
 
+            DartSpider.searchIndex == 14 and self.next_keyword()
 
         if DartSpider.searchIndex > DartSpider.last_searchIndex:
             return
@@ -67,3 +68,16 @@ class DartSpider(scrapy.Spider):
             },
             callback=self.parse
         )
+
+    def next_page(self):
+        DartSpider.currentPage += 1
+        
+
+    def reset_page(self):
+        DartSpider.currentPage = 1
+
+    def is_last_page(self, rows):
+        return len(rows) < 300
+
+    def next_keyword(self):
+        DartSpider.searchIndex += 1
