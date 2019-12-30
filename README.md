@@ -85,6 +85,26 @@ $ scrapy crawl exchange_coinone -o result.json
 $ scrapy crawl exchange_coinone -o result.csv -t csv
 ```
 
+## 전자공시 시스템
+
+* 구동
+
+```bash
+$ scrapy crawl dart
+```
+
+* json 저장
+
+```bash
+$ scrapy crawl dart -o dart.json
+```
+
+* csv 저장
+
+```bash
+$ scrapy crawl dart -o dart.csv -t csv
+```
+
 
 # crawler generator
 

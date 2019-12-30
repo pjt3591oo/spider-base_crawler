@@ -45,3 +45,10 @@ class CoinoneItem(scrapy.Item):
     close = scrapy.Field()
     volume = scrapy.Field()
     adj_Close = scrapy.Field()
+
+class DartItem(scrapy.Item):
+    office_name = scrapy.Field()  # 회사이름
+    admin_name = scrapy.Field()   # 대표이름
+    description = scrapy.Field()  # 회사설명
+    category = scrapy.Field()     # 법인종류
+    code = scrapy.Field()         # 종목코드
