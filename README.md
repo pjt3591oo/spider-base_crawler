@@ -105,6 +105,26 @@ $ scrapy crawl dart -o dart.json
 $ scrapy crawl dart -o dart.csv -t csv
 ```
 
+## 네이버 웹툰 리스트
+
+* 구동
+
+```bash
+$ scrapy crawl naver_webtoon
+```
+
+* json 저장
+
+```bash
+$ scrapy crawl naver_webtoon -o webtoon.csv
+```
+
+* csv 저장
+
+```bash
+$ scrapy crawl naver_webtoon -o webtoon.csv -t csv    
+```
+
 
 # crawler generator
 
