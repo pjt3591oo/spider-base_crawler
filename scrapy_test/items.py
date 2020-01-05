@@ -52,3 +52,9 @@ class DartItem(scrapy.Item):
     description = scrapy.Field()  # 회사설명
     category = scrapy.Field()     # 법인종류
     code = scrapy.Field()         # 종목코드
+
+class NaverWebtoonsItem(scrapy.Item):
+    title_id = scrapy.Field()
+    weekday = scrapy.Field()  
+    title = scrapy.Field()
+    href = scrapy.Field()
