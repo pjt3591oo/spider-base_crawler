@@ -148,4 +148,4 @@ class ExchangeUpbitSpider(scrapy.Spider):
 
 ```
 
-전달된 링크가 **`allowed)_domains`**와 **`start_urls`** 값으로 전달된다.
+전달된 링크가 **`allowed_domains`**, **`start_urls`** 값으로 전달된다.
